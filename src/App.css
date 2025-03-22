@@ -1,12 +1,28 @@
-*{
-	margin: 0;
-	padding: 0;
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-/* Para el header */
-.navContainer{
+/* Layout general */
+body, #root {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+}
+
+/* Header */
+header {
+  grid-area: header;
+}
+
+.navContainer {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -14,42 +30,170 @@
   height: 50px;
 }
 
-.navContainer a{
+.navContainer a {
   text-decoration: none;
   color: white;
 }
 
-.navContainer img{
+.navContainer img {
   height: 50px;
 }
 
-.carrito{
+.carrito {
   color: white;
   font-size: 30px;
 }
-.carrito span{
+
+.carrito span {
   border-radius: 10px;
   font-size: 10px;
   background-color: red;
 }
 
-/* Para el main */
-
-h1 {
+/* Main */
+main {
+  grid-area: main;
+  padding-bottom: 20px;
   text-align: center;
+}
+
+h1, h2 {
   padding: 40px;
 }
 
 h2 {
-  text-align: center;
-  margin-left: 100px;
-  margin-right: 100px;
+  margin: 0 100px;
 }
 
-/* Para el Footer */
-footer {
+/* Lista de items */
+.itemList {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+/* Cards */
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 15rem;
+  margin: 15px;
+  padding-bottom: 10px;
+  border: 3px solid black;
+  border-radius: 2rem;
   text-align: center;
-  margin-top: 10px;
+}
+
+.card img {
+  width: 80%;
+  border-radius: 2rem;
+  padding-top: 0.5rem;
+  margin-bottom: 5px;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.cardText {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+/* Botón "Ver más" */
+.botonVer {
+  background-color: black;
+  color: white;
+  height: 40px;
+  width: 60%;
+  max-width: 250px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px;
+  white-space: nowrap;
+}
+
+/* Detalle de productos */
+.itemDetail {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    height: 500px;
+    grid-template-areas:
+      "titulo titulo"
+      "imagen resumen"
+      "imagen resumen"
+      "detalle resumen";
+    justify-items: center;
+    gap: 20px; /* Espaciado entre los elementos */
+  }
+
+  .itemDetail > div {
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    width: 90%;
+  }
+
+  .imgDetail {
+    grid-area: imagen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .imgDetail img {
+    height: 20rem;
+  }
+
+  .resumenDetail {
+    grid-area: resumen;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .itemDetail > .tituloDetail { 
+  grid-area: titulo;
+  border: none;
+ }
+.parrafoDetail { 
+  grid-area: detalle;
+  margin-top: 30px;
+ }
+.cantidad { justify-items: center; }
+
+.botonMenos, .botonMas{
+  background-color: black;
+  color: white;
+  margin: 4px;
+  width: 20px;
+  border-radius: 10px;
+}
+
+.botonAnadir{
+  background-color: black;
+  color: white;
+  height: 30px;
+  width: 150px;
+  border-radius: 15px;
+}
+
+
+/* Footer */
+footer {
+  grid-area: footer;
+  text-align: center;
   background-color: black;
   color: white;
   padding: 5px;
@@ -59,4 +203,31 @@ footer img {
   width: 20px;
   height: 20px;
   margin: 10px;
+}
+
+/* Página no encontrada */
+.pagNoFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  text-align: center;
+  padding: 20px;
+}
+
+.pagNoFound h1 {
+  font-size: 6rem;
+  color: black;
+}
+
+.pagNoFound .boton {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
 }
