@@ -138,11 +138,8 @@ h2 {
   justify-items: center;
   gap: 20px;
   min-height: 500px;
-  /* cambiamos height fijo por min-height */
   padding: 0 20px;
-  /* agregamos padding horizontal */
   margin-bottom: 30px;
-  /* espacio adicional en la parte inferior */
 }
 
 .itemDetail>div {
@@ -151,7 +148,6 @@ h2 {
   padding: 20px;
   width: 90%;
   overflow-y: auto;
-  /* permitimos scroll vertical si es necesario */
 }
 
 .imgDetail {
@@ -165,7 +161,6 @@ h2 {
 .imgDetail img {
   max-height: 20rem;
   object-fit: contain;
-  /* mantiene la proporción de la imagen */
   width: auto;
 }
 
@@ -177,7 +172,6 @@ h2 {
   justify-content: center;
   text-align: center;
   height: 100%;
-  /* ocupa todo el espacio vertical disponible */
 }
 
 .itemDetail>.tituloDetail {
@@ -190,9 +184,7 @@ h2 {
   margin-top: 10px;
   width: 100%;
   height: auto;
-  /* altura automática según el contenido */
   max-height: none;
-  /* eliminamos restricción de altura */
 }
 
 /* Media queries para responsividad */
@@ -402,9 +394,7 @@ footer img {
 
 .formulario {
   max-width: 400px;
-  /* para que no se estire demasiado */
   margin: 0 auto;
-  /* centrado horizontal */
   padding: 20px;
 }
 
@@ -417,7 +407,6 @@ footer img {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  /* espacio entre elementos */
 }
 
 .formulario input {
