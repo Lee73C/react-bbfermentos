@@ -22,19 +22,7 @@ export const CartProvider = ({children})=>{
                     return prod
                 }
             })
-            //actualizar el estado cart
             setCart(updatedCart)
-            //sin declarar constante
-            // setCart(
-            //     cart.map((prod)=> {
-            //         if(prod.id === item.id){
-            //             //sumar cantidades
-            //             return {...prod, quantity: prod.quantity + quantity }
-            //         }else{
-            //             return prod
-            //         }
-            //     })
-            // )
         }else{
             //sumar el producto nuevo
             setCart([...cart, {...item, quantity}])
@@ -62,7 +50,7 @@ export const CartProvider = ({children})=>{
         return cart.reduce((acc, prod) => (acc += prod.price * prod.quantity),0)
     }
 
-    //total de items la llamaos en cartWidget
+    //total de items la llamamos en cartWidget
 
     const cartQuantity = () => {
         return cart.reduce((acc, prod)=> acc += prod.quantity, 0)
@@ -79,5 +67,5 @@ export const CartProvider = ({children})=>{
 }
 
 
-//OPCIONAL MINI CUSTOM HOOK
+// MINI CUSTOM HOOK
 export const useCart = () => useContext(CartContext)
